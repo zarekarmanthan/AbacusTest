@@ -4,15 +4,21 @@ using UnityEngine;
 
 public class AbacusManager : MonoBehaviour
 {
-    // Start is called before the first frame update
+    private List<MovementScript> beads = new List<MovementScript>();
+
     void Start()
     {
-        
+        // Populate the 'beads' list with references to all bead controllers
+        beads.AddRange(FindObjectsOfType<MovementScript>());
     }
 
-    // Update is called once per frame
-    void Update()
+    // Call this method when you want to move all beads simultaneously
+    public void MoveAllBeads(float deltaY)
     {
-        
+        foreach (MovementScript bead in beads)
+        {
+            // Move each bead by the same deltaY value
+            bead.transform.position += new Vector3(0f, deltaY, 0f);
+        }
     }
 }

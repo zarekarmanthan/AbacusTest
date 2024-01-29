@@ -31,11 +31,21 @@ public class MovementScript : MonoBehaviour
 
     void Update()
     {
-
-
         if (isDragging)
         {
-            CheckForObjectAbove();
+            targetPosition = new Vector3(transform.position.x, GetMouseWorldPos().y + offset.y, transform.position.z);
+            transform.position = Vector3.Lerp(transform.position, targetPosition, Time.deltaTime * 5f);
+
+            //DragAndMove();
+        }
+    }
+
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Box")
+        {
+            isDragging = false;
         }
     }
 
@@ -94,30 +104,24 @@ public class MovementScript : MonoBehaviour
         }
     }
 
-    void CheckForObjectAbove()
+    void DragAndMove()
     {
-
-        moveDistance = 1f;
-        speed = 0.5f;
-
         RaycastHit hit;
+        float deltaY = Camera.main.ScreenToWorldPoint(Input.mousePosition).y + offset.y - transform.position.y;
+
 
         // Cast a ray from the object's position upwards
         if (Physics.Raycast(transform.position, Vector3.up, out hit, raycastDistance))
         {
-            if (hit.collider.tag == "Ball")
-            {
-                for (int i = 0; i < beads.Count; i++)
-                {
-                    targetPosition = new Vector3(transform.position.x, GetMouseWorldPos().y + offset.y, transform.position.z);
-
-                    beads[i].transform.position = Vector3.Lerp(transform.position, targetPosition, Time.deltaTime * 5f);
-                }
-            }
-
-            else if (hit.collider.gameObject.tag == "Box")
+            if (hit.collider.tag == "Ball" || hit.collider.gameObject.tag == "Box")
             {
                 isDragging = false;
+            }
+
+            else 
+            {
+                targetPosition = new Vector3(transform.position.x, GetMouseWorldPos().y + offset.y, transform.position.z);
+                transform.position = Vector3.Lerp(transform.position, targetPosition, Time.deltaTime * 5f);
             }
             Debug.Log("Object above detected: " + hit.collider.gameObject.name);
             // Do something with the object above (e.g., access hit.collider.gameObject)
@@ -126,19 +130,15 @@ public class MovementScript : MonoBehaviour
         {
             Debug.Log("No object above detected.");
 
-            if (hit.collider.tag == "Ball")
-            {
-                for (int i = 0; i < beads.Count; i++)
-                {
-                    targetPosition = new Vector3(transform.position.x, GetMouseWorldPos().y + offset.y, transform.position.z);
-
-                    beads[i].transform.position = Vector3.Lerp(transform.position, targetPosition, Time.deltaTime * 5f);
-                }
-            }
-
-            else if (hit.collider.gameObject.tag == "Box")
+            if (hit.collider.tag == "Ball" || hit.collider.gameObject.tag == "Box")
             {
                 isDragging = false;
+            }
+
+            else
+            {
+                targetPosition = new Vector3(transform.position.x, GetMouseWorldPos().y + offset.y, transform.position.z);
+                transform.position = Vector3.Lerp(transform.position, targetPosition, Time.deltaTime * 5f);
             }
         }
     }
