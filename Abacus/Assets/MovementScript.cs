@@ -8,7 +8,46 @@ public class MovementScript : MonoBehaviour
     public float raycastDistance = 1f;
 
 
+
+
+    private Vector3 offset;
+    private bool isDragging = false;
+
+    void OnMouseDown()
+    {
+        offset = transform.position - GetMouseWorldPos();
+        isDragging = true;
+    }
+
+    void OnMouseUp()
+    {
+        isDragging = false;
+    }
+
     void Update()
+    {
+        if (isDragging)
+        {
+            Vector3 targetPosition = new Vector3(transform.position.x, GetMouseWorldPos().y + offset.y, transform.position.z);
+            transform.position = Vector3.Lerp(transform.position, targetPosition, Time.deltaTime * 5f);
+        }
+    }
+
+    Vector3 GetMouseWorldPos()
+    {
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+
+        if (Physics.Raycast(ray, out hit))
+        {
+            return hit.point;
+        }
+
+        return Vector3.zero;
+    }
+
+
+    /*void Update()
     {
         // Check for mouse click
         if (Input.GetMouseButtonDown(0)) // Change to the appropriate mouse button if needed
@@ -16,7 +55,7 @@ public class MovementScript : MonoBehaviour
             CheckForObjectAbove();
 
 
-           
+
         }
 
         if (Input.GetMouseButtonDown(1))
@@ -38,7 +77,7 @@ public class MovementScript : MonoBehaviour
         }
 
         transform.position = endPos; // Ensure the final position is exactly as intended
-    }
+    }*/
 
 
     void CheckForObjectAbove()
@@ -63,7 +102,7 @@ public class MovementScript : MonoBehaviour
             float newY = transform.position.y + moveDistance;
 
             // Move the object smoothly using Lerp
-            StartCoroutine(MoveObject(transform.position, new Vector3(transform.position.x, newY, transform.position.z), speed));
+           // StartCoroutine(MoveObject(transform.position, new Vector3(transform.position.x, newY, transform.position.z), speed));
         }
     }
 
@@ -94,7 +133,7 @@ public class MovementScript : MonoBehaviour
             float newY = transform.position.y + moveDistance;
 
             // Move the object smoothly using Lerp
-            StartCoroutine(MoveObject(transform.position, new Vector3(transform.position.x, newY, transform.position.z), speed));
+           // StartCoroutine(MoveObject(transform.position, new Vector3(transform.position.x, newY, transform.position.z), speed));
             Debug.Log("No object below detected.");
         }
     }
