@@ -130,6 +130,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1584749694}
     m_Modifications:
+    - target: {fileID: -3008080632151319948, guid: d8a6d179cb9c33a4a932f5f2d897ce52, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 756098766, guid: d8a6d179cb9c33a4a932f5f2d897ce52, type: 3}
       propertyPath: beads.Array.size
       value: 0
@@ -137,6 +141,10 @@ PrefabInstance:
     - target: {fileID: 1123667141063618520, guid: d8a6d179cb9c33a4a932f5f2d897ce52, type: 3}
       propertyPath: m_Name
       value: Sphere
+      objectReference: {fileID: 0}
+    - target: {fileID: 1123667141063618520, guid: d8a6d179cb9c33a4a932f5f2d897ce52, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1123667141063618520, guid: d8a6d179cb9c33a4a932f5f2d897ce52, type: 3}
       propertyPath: m_TagString
@@ -200,6 +208,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1584749694}
     m_Modifications:
+    - target: {fileID: -3008080632151319948, guid: d8a6d179cb9c33a4a932f5f2d897ce52, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 756098766, guid: d8a6d179cb9c33a4a932f5f2d897ce52, type: 3}
       propertyPath: beads.Array.size
       value: 0
@@ -207,6 +219,10 @@ PrefabInstance:
     - target: {fileID: 1123667141063618520, guid: d8a6d179cb9c33a4a932f5f2d897ce52, type: 3}
       propertyPath: m_Name
       value: Sphere (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1123667141063618520, guid: d8a6d179cb9c33a4a932f5f2d897ce52, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1123667141063618520, guid: d8a6d179cb9c33a4a932f5f2d897ce52, type: 3}
       propertyPath: m_TagString
@@ -363,6 +379,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1584749694}
     m_Modifications:
+    - target: {fileID: -3008080632151319948, guid: d8a6d179cb9c33a4a932f5f2d897ce52, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 756098766, guid: d8a6d179cb9c33a4a932f5f2d897ce52, type: 3}
       propertyPath: beads.Array.size
       value: 0
@@ -370,6 +390,10 @@ PrefabInstance:
     - target: {fileID: 1123667141063618520, guid: d8a6d179cb9c33a4a932f5f2d897ce52, type: 3}
       propertyPath: m_Name
       value: Sphere (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1123667141063618520, guid: d8a6d179cb9c33a4a932f5f2d897ce52, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1490446604434417775, guid: d8a6d179cb9c33a4a932f5f2d897ce52, type: 3}
       propertyPath: m_RootOrder
@@ -434,6 +458,7 @@ GameObject:
   - component: {fileID: 828556631}
   - component: {fileID: 828556630}
   - component: {fileID: 828556629}
+  - component: {fileID: 828556633}
   m_Layer: 0
   m_Name: Cube (2)
   m_TagString: Box
@@ -512,11 +537,27 @@ Transform:
   m_GameObject: {fileID: 828556628}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 5.89, z: 0}
-  m_LocalScale: {x: 2.4692, y: 0.743369, z: 1}
+  m_LocalScale: {x: 2.4692, y: 0.743369, z: 2.307}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &828556633
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 828556628}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 3
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -607,6 +648,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1584749694}
     m_Modifications:
+    - target: {fileID: -3008080632151319948, guid: d8a6d179cb9c33a4a932f5f2d897ce52, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 756098766, guid: d8a6d179cb9c33a4a932f5f2d897ce52, type: 3}
       propertyPath: beads.Array.size
       value: 0
@@ -614,6 +659,10 @@ PrefabInstance:
     - target: {fileID: 1123667141063618520, guid: d8a6d179cb9c33a4a932f5f2d897ce52, type: 3}
       propertyPath: m_Name
       value: Sphere (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1123667141063618520, guid: d8a6d179cb9c33a4a932f5f2d897ce52, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1123667141063618520, guid: d8a6d179cb9c33a4a932f5f2d897ce52, type: 3}
       propertyPath: m_TagString
@@ -682,6 +731,7 @@ GameObject:
   - component: {fileID: 1240017769}
   - component: {fileID: 1240017768}
   - component: {fileID: 1240017767}
+  - component: {fileID: 1240017771}
   m_Layer: 0
   m_Name: Cube (1)
   m_TagString: Box
@@ -760,11 +810,27 @@ Transform:
   m_GameObject: {fileID: 1240017766}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -3.06, z: 0}
-  m_LocalScale: {x: 2.4692, y: 1, z: 1}
+  m_LocalScale: {x: 2.4692, y: 1, z: 2.307}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &1240017771
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1240017766}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 3
 --- !u!1001 &1307413134
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -772,6 +838,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1584749694}
     m_Modifications:
+    - target: {fileID: -3008080632151319948, guid: d8a6d179cb9c33a4a932f5f2d897ce52, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 756098766, guid: d8a6d179cb9c33a4a932f5f2d897ce52, type: 3}
       propertyPath: beads.Array.size
       value: 0
@@ -779,6 +849,10 @@ PrefabInstance:
     - target: {fileID: 1123667141063618520, guid: d8a6d179cb9c33a4a932f5f2d897ce52, type: 3}
       propertyPath: m_Name
       value: Sphere (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1123667141063618520, guid: d8a6d179cb9c33a4a932f5f2d897ce52, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1123667141063618520, guid: d8a6d179cb9c33a4a932f5f2d897ce52, type: 3}
       propertyPath: m_TagString
@@ -895,6 +969,7 @@ GameObject:
   - component: {fileID: 1971294584}
   - component: {fileID: 1971294583}
   - component: {fileID: 1971294582}
+  - component: {fileID: 1971294586}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Box
@@ -973,8 +1048,24 @@ Transform:
   m_GameObject: {fileID: 1971294581}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 2.9817, z: 0}
-  m_LocalScale: {x: 2.4692, y: 0.743369, z: 1}
+  m_LocalScale: {x: 2.4692, y: 0.743369, z: 2.307}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &1971294586
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1971294581}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 3

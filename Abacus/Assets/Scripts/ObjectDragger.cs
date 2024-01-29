@@ -1,80 +1,19 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class MovementScript : MonoBehaviour
+public class ObjectDragger : MonoBehaviour
 {
     public float moveDistance = 1.0f; // Set the distance the object should move up and down
     public float speed = 5.0f; // Set the speed of the movement
     public float raycastDistance = 1f;
 
 
-    public List<GameObject> beads = new List<GameObject>();
-
-    Vector3 targetPosition;
-
-    private Vector3 offset;
-    private bool isDragging = false;
-
-
-
-
-    void OnMouseDown()
-    {
-        offset = transform.position - GetMouseWorldPos();
-        isDragging = true;
-    }
-
-    void OnMouseUp()
-    {
-        isDragging = false;
-    }
-
-    private void OnMouseDrag()
-    {
-        if (isDragging)
-        {
-            //targetPosition = new Vector3(transform.position.x, GetMouseWorldPos().y + offset.y, transform.position.z);
-            // transform.position = Vector3.Lerp(transform.position, targetPosition, Time.deltaTime * 5f);
-
-            CheckForObjectAbove();
-            CheckForObjectBelow();
-
-        }
-    }
-
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.tag == "Box")
-        {
-            isDragging = false;
-        }
-    }
-
-    Vector3 GetMouseWorldPos()
-    {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
-
-        if (Physics.Raycast(ray, out hit))
-        {
-            return hit.point;
-        }
-
-        return Vector3.zero;
-    }
-
-
-   /* void Update()
+    void Update()
     {
         // Check for mouse click
         if (Input.GetMouseButtonDown(0)) // Change to the appropriate mouse button if needed
         {
             CheckForObjectAbove();
-
-
-
         }
 
         if (Input.GetMouseButtonDown(1))
@@ -82,7 +21,7 @@ public class MovementScript : MonoBehaviour
             CheckForObjectBelow();
 
         }
-    }*/
+    }
 
     IEnumerator MoveObject(Vector3 startPos, Vector3 endPos, float duration)
     {
@@ -99,13 +38,6 @@ public class MovementScript : MonoBehaviour
     }
 
 
-    void MoveBeads()
-    {
-        for (int i = 0; i < beads.Count; i++)
-        {
-            beads[i].transform.position += new Vector3(0,1f,0);
-        }
-    }
 
     void CheckForObjectAbove()
     {
